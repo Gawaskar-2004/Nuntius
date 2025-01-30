@@ -1,9 +1,6 @@
 package com.Nuntius.Nuntius.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -11,6 +8,7 @@ import java.time.LocalDateTime;
 @Table(name="chat")
 public class Chat {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="CHAT_ID")
     private String chat_id;
     @Column(name="CHAT_NAME")
