@@ -15,10 +15,10 @@ public class group {
     @Column(name = "GROUP_NAME")
     private String group_name;
 
-    @Column(name = "CREATED_BY")
-    private String created_by;
-    @ManyToOne
     @JoinColumn(name = "CREATED_BY", referencedColumnName = "USER_ID")
+    private String created_by;
+
+    @Column(name="CREATED_AT")
     private LocalDateTime created_at;
 
 
