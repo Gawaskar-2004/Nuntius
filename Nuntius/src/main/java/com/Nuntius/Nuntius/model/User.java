@@ -7,12 +7,12 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user") // Use your actual table name
+@Table(name = "user")
 public class User {
 
     @Id
     @Column(name = "USER_ID")
-    private String user_id; // Ensure this field name matches the database column
+    private String user_id;
 
     @Column(name = "NAME")
     private String name;
@@ -26,7 +26,7 @@ public class User {
     @Column(name = "CREATED_AT")
     private LocalDateTime created_at;
 
-    // Getter and Setter for user_id
+
     public String getUser_id() {
         return user_id;
     }
@@ -35,7 +35,7 @@ public class User {
         this.user_id = user_id;
     }
 
-    // Getter and Setter for name
+
     public String getName() {
         return name;
     }
@@ -44,7 +44,7 @@ public class User {
         this.name = name;
     }
 
-    // Getter and Setter for email
+
     public String getEmail() {
         return email;
     }
@@ -53,7 +53,7 @@ public class User {
         this.email = email;
     }
 
-    // Getter and Setter for phone_no
+
     public int getPhone_no() {
         return phone_no;
     }
@@ -62,7 +62,7 @@ public class User {
         this.phone_no = phone_no;
     }
 
-    // Getter and Setter for created_at
+
     public LocalDateTime getCreated_at() {
         return created_at;
     }

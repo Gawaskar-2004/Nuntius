@@ -10,14 +10,14 @@ public class Encryption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ENCRYPTION_ID")
-    private Long encryptionId; // Changed to Long for auto_increment
+    private Long encryptionId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ENCRYPTED_CHAT_ID", referencedColumnName = "CHAT_ID")
-    private Chat chat;  // This represents the foreign key relationship to Chat
+    @JoinColumn(name ="CHAT_ID")
+    private Chat chat;
 
     @Column(name = "ENCRYPTIONKEY")
-    private String encryptionKey;  // Renamed to avoid conflict with SQL keyword
+    private String encryptionKey;
 
     @Column(name = "ALGORITHM")
     private String algorithm;
@@ -25,7 +25,7 @@ public class Encryption {
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
 
-    // Getters and setters
+
     public Long getEncryptionId() {
         return encryptionId;
     }
