@@ -18,4 +18,36 @@ public class Chat {
     @Column(name="CREATED_AT")
     private LocalDateTime created_at;
 
+    public String getChat_id() {
+        return chat_id;
+    }
+
+    public void setChatId(String chat_id) {
+        this.chat_id = chat_id;
+    }
+
+    public String getChat_name() {
+        return chat_name;
+    }
+
+    public void setChat_name(String chat_name) {
+        this.chat_name = chat_name;
+    }
+
+    public Boolean getIs_group() {
+        return is_group;
+    }
+
+    public void setIs_group(Boolean is_group) {
+        this.is_group = is_group;
+    }
+
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
 }
