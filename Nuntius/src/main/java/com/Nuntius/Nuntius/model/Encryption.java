@@ -12,11 +12,11 @@ public class Encryption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ENCRYPTION_ID")
-    private Long encryptionId;
+    private Long encryption_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name ="CHAT_ID")
-    private Chat chat;
+    private Chat chat_id;
 
     @Column(name = "ENCRYPTIONKEY")
     private String encryptionKey;
@@ -29,19 +29,19 @@ public class Encryption {
 
 
     public Long getEncryptionId() {
-        return encryptionId;
+        return encryption_id;
     }
 
-    public void setEncryptionId(Long encryptionId) {
-        this.encryptionId = encryptionId;
+    public void setEncryptionId(Long encryption_id) {
+        this.encryption_id = encryption_id;
     }
 
     public Chat getChat() {
-        return chat;
+        return chat_id;
     }
 
-    public void setChat(Chat chat) {
-        this.chat = chat;
+    public void setChat(Chat chat_id) {
+        this.chat_id = chat_id;
     }
 
     public String getEncryptionKey() {
