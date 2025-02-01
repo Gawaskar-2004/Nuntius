@@ -9,16 +9,14 @@ import java.time.LocalDateTime;
 @Table(name = "group.")
 public class group {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "GROUP_ID")
     private String group_id;
 
     @Column(name = "GROUP_NAME")
     private String group_name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CREATED_BY")
-    private User created_by;
+    @JoinColumn(name = "CREATED_BY", referencedColumnName = "USER_ID")
+    private String created_by;
 
     @Column(name="CREATED_AT")
     private LocalDateTime created_at;

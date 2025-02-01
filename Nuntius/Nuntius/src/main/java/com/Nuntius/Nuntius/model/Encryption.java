@@ -1,8 +1,6 @@
 package com.Nuntius.Nuntius.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,14 +10,14 @@ public class Encryption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ENCRYPTION_ID")
-    private Long encryptionId;
+    private Long encryptionId; // Changed to Long for auto_increment
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name ="CHAT_ID")
-    private Chat chat;
+    @JoinColumn(name = "ENCRYPTED_CHAT_ID", referencedColumnName = "CHAT_ID")
+    private Chat chat;  // This represents the foreign key relationship to Chat
 
     @Column(name = "ENCRYPTIONKEY")
-    private String encryptionKey;
+    private String encryptionKey;  // Renamed to avoid conflict with SQL keyword
 
     @Column(name = "ALGORITHM")
     private String algorithm;
@@ -27,7 +25,7 @@ public class Encryption {
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
 
-
+    // Getters and setters
     public Long getEncryptionId() {
         return encryptionId;
     }
