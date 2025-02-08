@@ -20,9 +20,9 @@ public class GroupController {
     private GroupRepository groupRepository;
 
     @Autowired
-    private UserRepository userRepository;  // Inject the UserRepository
+    private UserRepository userRepository;
 
-    // Get all groups
+
     @GetMapping
     public List<Group> getAllGroups() {
         return groupRepository.findAll();
@@ -40,39 +40,5 @@ public class GroupController {
         Group group = groupRepository.findById(group_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Group not found with id: " + group_id));
         return ResponseEntity.ok(group);
-    }
-
-    // Update a group by its ID
-    @PutMapping("/{group_id}")
-    public ResponseEntity<Group> updateGroup(@PathVariable Long group_id, @RequestBody Group groupDetails) {
-        Group group = groupRepository.findById(group_id)
-                .orElseThrow(() -> new ResourceNotFoundException("Group not found with id: " + group_id));
-
-        // Set group name
-        group.setGroupName(groupDetails.getGroupName());
-
-        // Ensure the 'created_by' user exists
-        if (groupDetails.getCreatedBy() != null) {
-            User user = userRepository.findById(groupDetails.getCreatedBy().getUser_id())
-                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + groupDetails.getCreatedBy().getUser_id()));
-            group.setCreatedBy(user);
-        }
-
-        // Set created at
-        group.setCreatedAt(groupDetails.getCreatedAt());
-
-        // Save and return the updated group
-        Group updatedGroup = groupRepository.save(group);
-        return ResponseEntity.ok(updatedGroup);
-    }
-
-    // Delete a group by its ID
-    @DeleteMapping("/{group_id}")
-    public ResponseEntity<Void> deleteGroup(@PathVariable Long group_id) {
-        Group group = groupRepository.findById(group_id)
-                .orElseThrow(() -> new ResourceNotFoundException("Group not found with id: " + group_id));
-
-        groupRepository.delete(group);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

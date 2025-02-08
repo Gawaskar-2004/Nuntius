@@ -10,7 +10,7 @@ public class Chat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="CHAT_ID")
-    private String chat_id;
+    private int chat_id;
     @Column(name="CHAT_NAME")
     private String chat_name;
     @Column(name="IS_GROUP")
@@ -18,11 +18,11 @@ public class Chat {
     @Column(name="CREATED_AT")
     private LocalDateTime created_at;
 
-    public String getChat_id() {
+    public int getChat_id() {
         return chat_id;
     }
 
-    public void setChatId(String chat_id) {
+    public void setChatId(int chat_id) {
         this.chat_id = chat_id;
     }
 
@@ -50,4 +50,7 @@ public class Chat {
         this.created_at = created_at;
     }
 
+    public int getId() {
+        return chat_id;
+    }
 }

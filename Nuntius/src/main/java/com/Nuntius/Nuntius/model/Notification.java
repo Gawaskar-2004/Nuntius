@@ -13,8 +13,8 @@ public class Notification {
     private String notification_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "USER_ID")
-    private User user_id;
+    @JoinColumn(name = "USERID")
+    private User userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "MESSAGE_ID")
@@ -35,12 +35,12 @@ public class Notification {
         this.notification_id = notification_id;
     }
 
-    public User getUser_id() {  // Renamed to getUser_id()
-        return user_id;
+    public User getUserId() {  // Renamed to getUser_id()
+        return userId;
     }
 
-    public void setUser_id(User user_id) {  // Renamed to setUser_id()
-        this.user_id = user_id;
+    public void setUserId(User userId) {  // Renamed to setUser_id()
+        this.userId = userId;
     }
 
     public Message getMessage_id() {  // Renamed to getMessage_id()

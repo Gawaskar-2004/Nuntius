@@ -13,7 +13,7 @@ public class Authentication {
     private Long authId;
 
     @ManyToOne
-    @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
+    @JoinColumn(name = "USERID", referencedColumnName = "USERID")
     private User user;
 
     @Column(name = "TOKEN")

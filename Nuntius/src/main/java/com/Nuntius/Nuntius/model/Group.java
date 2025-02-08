@@ -11,7 +11,7 @@ public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "GROUP_ID")
-    private String group_id;
+    private int  group_id;
 
     @Column(name = "GROUP_NAME")
     private String group_name;
@@ -23,11 +23,11 @@ public class Group {
     @Column(name = "CREATED_AT")
     private LocalDateTime created_at;
 
-    public String getGroupId() {
+    public int getGroupId() {
         return group_id;
     }
 
-    public void setGroupId(String group_id) {
+    public void setGroupId(int group_id) {
         this.group_id = group_id;
     }
 

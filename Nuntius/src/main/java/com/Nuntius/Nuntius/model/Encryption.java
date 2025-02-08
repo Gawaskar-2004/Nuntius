@@ -12,7 +12,7 @@ public class Encryption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ENCRYPTION_ID")
-    private Long encryption_id;
+    private int encryption_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name ="CHAT_ID")
@@ -28,11 +28,11 @@ public class Encryption {
     private LocalDateTime createdAt;
 
 
-    public Long getEncryptionId() {
+    public int getEncryptionId() {
         return encryption_id;
     }
 
-    public void setEncryptionId(Long encryption_id) {
+    public void setEncryptionId(int encryption_id) {
         this.encryption_id = encryption_id;
     }
 
